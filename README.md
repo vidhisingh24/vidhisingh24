@@ -17,9 +17,10 @@
 🚀 Interested in **Open Source & Real-world Projects**  
 🎯 Goal: Become a **Skilled Software Engineer**  
 ✨ Love turning ideas into real applications  
+</div>
 
 ## 🎯 Current Focus
-
+  <div align="center">
 - 🌱 Learning Full-Stack Web Development
 - 💻 Solving DSA problems regularly
 - 🤝 Contributing to Open Source projects
