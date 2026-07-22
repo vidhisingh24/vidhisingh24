@@ -18,6 +18,13 @@
 🎯 Goal: Become a **Skilled Software Engineer**  
 ✨ Love turning ideas into real applications  
 
+## 🎯 Current Focus
+
+- 🌱 Learning Full-Stack Web Development
+- 💻 Solving DSA problems regularly
+- 🤝 Contributing to Open Source projects
+- 🚀 Building real-world projects for placements
+
 </div>
 
 ---
