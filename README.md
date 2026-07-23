@@ -23,10 +23,10 @@
 
 <div align="center">
     
-🌱 Learning Full-Stack Web Development
-💻 Solving DSA problems regularly
-🤝 Contributing to Open Source projects
-🚀 Building real-world projects for placements
+🌱 Learning Full-Stack Web Development<br>
+💻 Solving DSA problems regularly<br>
+🤝 Contributing to Open Source projects<br>
+🚀 Building real-world projects for placements<br>
 </div>
 
 ---
