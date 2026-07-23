@@ -21,13 +21,12 @@
 
 ## 🎯 Current Focus
 
-  <div align="center">
+<div align="center">
     
 🌱 Learning Full-Stack Web Development
 💻 Solving DSA problems regularly
 🤝 Contributing to Open Source projects
 🚀 Building real-world projects for placements
-
 </div>
 
 ---
