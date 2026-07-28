@@ -22,6 +22,9 @@
 ## 🎯 Current Focus
 
 <div align="center">
+## 🎯 Current Focus
+
+<div align="center">
     
 🌱 Learning Full-Stack Web Development<br>
 💻 Solving DSA problems regularly<br>
