@@ -1,0 +1,100 @@
+# ────────────────────────────────────────────────────────────────────
+#  Bulletproof GitHub Metrics Generator (backup for broken widgets)
+#
+#  Uses lowlighter/metrics — the most reliable GitHub stats tool.
+#  Runs INSIDE your repo with YOUR OWN token → no rate limits, no
+#  broken CDNs, no blank cards. Ever.
+#
+#  Setup:
+#    1. Create a Personal Access Token (classic) at:
+#         https://github.com/settings/tokens
+#       Scopes needed: read:user, repo (public_repo is enough)
+#    2. Add it as a repo secret named METRICS_TOKEN:
+#         Settings → Secrets and variables → Actions → New secret
+#    3. Save this file at:  .github/workflows/metrics.yml
+#    4. Enable read/write permissions:
+#         Settings → Actions → General → Workflow permissions
+#         → "Read and write permissions" ✓
+#    5. Commit & push. Trigger once manually from the Actions tab.
+#    6. Reference the generated SVG in your README:
+#         <img src="metrics.svg" alt="Metrics"/>
+#         <img src="metrics-achievements.svg" alt="Achievements"/>
+# ────────────────────────────────────────────────────────────────────
+
+name: Generate GitHub Metrics
+
+on:
+  # Rebuild every 6 hours so numbers stay fresh
+  schedule:
+    - cron: "0 */6 * * *"
+
+  # Allow manual runs from the Actions tab
+  workflow_dispatch:
+
+  # Regenerate on every push to main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  # ────────────────────────────────────────────────────────────────
+  #  1) MAIN STATS CARD  →  metrics.svg
+  # ────────────────────────────────────────────────────────────────
+  main-metrics:
+    name: Main stats card
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token:            ${{ secrets.METRICS_TOKEN }}
+          filename:         metrics.svg
+          user:             vidhisingh24
+          template:         classic
+
+          # Base sections shown on the main card
+          base:             header, activity, community, repositories, metadata
+
+          # Visual style
+          config_timezone:  Asia/Kolkata
+          config_padding:   0, 8px
+
+          # Extra plugins
+          plugin_lines:              yes
+          plugin_lines_history_limit: 1
+
+          plugin_topics:             yes
+          plugin_topics_mode:        icons
+          plugin_topics_limit:       15
+
+          plugin_habits:             yes
+          plugin_habits_from:        200
+          plugin_habits_days:        14
+
+          plugin_languages:          yes
+          plugin_languages_limit:    8
+          plugin_languages_details:  bytes-size, percentage
+          plugin_languages_indepth:  yes
+
+  # ────────────────────────────────────────────────────────────────
+  #  2) ACHIEVEMENTS CARD  →  metrics-achievements.svg
+  # ────────────────────────────────────────────────────────────────
+  achievements-metrics:
+    name: Achievements card
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token:                    ${{ secrets.METRICS_TOKEN }}
+          filename:                 metrics-achievements.svg
+          user:                     vidhisingh24
+          base:                     ""
+          config_padding:           0, 8px
+
+          plugin_achievements:              yes
+          plugin_achievements_threshold:    C
+          plugin_achievements_secrets:      yes
+          plugin_achievements_display:      compact
+          plugin_achievements_limit:        0
