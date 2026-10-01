@@ -374,7 +374,7 @@ const vidhi = {
 </h2>
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vidhisingh24&theme=tokyo-night&hide_border=true&area=true" alt="activity graph" width="98%"/>
+  <img src="https://raw.githubusercontent.com/vidhisingh24/vidhisingh24/output/activity-graph.svg" alt="activity graph" width="98%"/>
 </div>
 
 <br/>
