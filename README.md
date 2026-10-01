@@ -19,7 +19,7 @@
 <!-- ═══════════════════════════════════════════════════════════════════ -->
 
 <p align="center">
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://linkedin.com/in/vidhisingh24"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
   <a href="mailto:vidhiisingh2403@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>
   <a href="https://github.com/vidhisingh24"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
   <img src="https://img.shields.io/github/followers/vidhisingh24?label=Followers&style=for-the-badge&color=1f6feb&labelColor=0d1117" alt="followers"/>
@@ -101,38 +101,81 @@ const vidhi = {
   <tr>
     <td width="50%" valign="top">
 
-### 🥗 [ZeroWaste](https://github.com/vidhisingh24)
-> **Food redistribution platform** connecting restaurants with surplus food to nearby NGOs & shelters.
+### 🤝 [CollabSpace](https://github.com/vidhisingh24/Collabspace)
+> **Real-time collaboration platform** — docs, code, whiteboard & kanban in one workspace.
 
 **✨ Features**
-- Real-time surplus food listings with geo-search
-- Auto-matching engine (restaurants ↔ NGOs)
-- Pickup coordination with in-app chat
-- Impact dashboard: meals saved · CO₂ averted
+- Yjs CRDT co-editing with live cursors & presence
+- Monaco code editor with Docker-sandboxed execution
+- Sharded WebSocket gateway, chaos-tested for data loss
+- Grafana observability + Gemini / OpenAI assistant
 
 **🛠 Stack**
-`React` `Node.js` `Express` `MongoDB` `Socket.IO` `Mapbox` `JWT`
+`Next.js` `TypeScript` `Node.js` `Express` `Yjs` `PostgreSQL` `Redis` `Docker`
 
-<a href="https://github.com/vidhisingh24">
+<a href="https://github.com/vidhisingh24/Collabspace">
   <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=flat-square&logo=github&logoColor=white"/>
 </a>
 
 </td>
     <td width="50%" valign="top">
 
-### 🩺 [MedEase AI](https://github.com/vidhisingh24)
-> **Intelligent healthcare ecosystem** — AI diagnostics, EHR, telemedicine, wellness tracking, all unified.
+### 🌾 [KisanLink AI](https://github.com/vidhisingh24/KisanLink-AI-IBM)
+> **Gujarat Hackathon 2026** — AI market linkage for cotton & groundnut farmers.
 
 **✨ Features**
-- AI symptom triage + medical image analysis
-- Encrypted EHR & appointment management
-- Secure WebRTC telemedicine consultations
-- HIPAA-aligned architecture with RBAC & audit logs
+- 4-agent workflow: mandi prices, buyer matching, sell-vs-store
+- Ranks buyers by net realization after freight cost
+- Sell now / store / 70-30 split scenario analysis
+- IBM Granite assistant in English & Gujarati
 
 **🛠 Stack**
-`React` `Node.js` `FastAPI` `MongoDB` `PyTorch` `WebRTC` `Docker` `Redis`
+`React` `Vite` `Tailwind` `Node.js` `Express` `IBM Granite` `watsonx.ai`
 
-<a href="https://github.com/vidhisingh24">
+<a href="https://github.com/vidhisingh24/KisanLink-AI-IBM">
+  <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=flat-square&logo=github&logoColor=white"/>
+</a>
+<a href="https://kisan-link-ai-ibm.vercel.app">
+  <img src="https://img.shields.io/badge/Live_Demo-2ea043?style=flat-square&logo=vercel&logoColor=white"/>
+</a>
+
+</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+
+### 🥗 [ZeroWaste Link](https://github.com/vidhisingh24/ZeroWaste_Link)
+> **Food rescue platform** connecting restaurants, NGOs & volunteers in real time.
+
+**✨ Features**
+- 4 role-based dashboards: Donor, NGO, Volunteer, Admin
+- Photo uploads with freshness analysis + smart NGO matching
+- Live Leaflet map with in-transit delivery tracking
+- Real-time chat + Recharts impact analytics
+
+**🛠 Stack**
+`Next.js` `React` `TypeScript` `Tailwind` `Leaflet` `Express` `MongoDB` `Socket.IO`
+
+<a href="https://github.com/vidhisingh24/ZeroWaste_Link">
+  <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=flat-square&logo=github&logoColor=white"/>
+</a>
+
+</td>
+    <td width="50%" valign="top">
+
+### 💸 [PaySlip](https://github.com/vidhisingh24/PaySlip)
+> **Income & tax tracker** for freelancers and gig workers.
+
+**✨ Features**
+- Deterministic tax engine: income, self-employment, quarterly
+- Expense tracking with receipt uploads
+- Plaid bank import + live updates over SSE
+- LLM categorisation with confidence shown
+
+**🛠 Stack**
+`React` `TypeScript` `Vite` `Node.js` `Express` `MongoDB` `Redis` `Jest` `Playwright`
+
+<a href="https://github.com/vidhisingh24/PaySlip">
   <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=flat-square&logo=github&logoColor=white"/>
 </a>
 
@@ -141,39 +184,42 @@ const vidhi = {
   <tr>
     <td width="50%" valign="top">
 
-### 📊 [AlgoViz](https://github.com/vidhisingh24)
-> **Interactive DSA visualizer** — animate sorting, searching, graph & tree algorithms step-by-step in the browser.
+### 🌸 [BloomCraft](https://github.com/vidhisingh24/BloomCraft)
+> **Storefront for a handmade crochet brand** from Vadodara.
 
 **✨ Features**
-- 20+ algorithms with side-by-side comparisons
-- Live complexity meter (time + space)
-- Custom input editor & step controls
-- C++ core compiled to **WebAssembly** for native-speed animations
+- Mobile-first catalog, cart & custom-order requests
+- 4-step checkout: local, college or pan-India delivery
+- UPI QR / deep-link payments + PDF receipts
+- Maker dashboard with order tracking & CSV export
 
 **🛠 Stack**
-`React` `TypeScript` `C++` `WebAssembly` `Tailwind` `Vite`
+`React` `TypeScript` `Vite` `Tailwind` `Vitest`
 
-<a href="https://github.com/vidhisingh24">
+<a href="https://github.com/vidhisingh24/BloomCraft">
   <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=flat-square&logo=github&logoColor=white"/>
 </a>
 
 </td>
     <td width="50%" valign="top">
 
-### 📚 [StudyMate AI](https://github.com/vidhisingh24)
-> **AI-powered study companion** — turn any PDF, video, or lecture into notes, flashcards, and quizzes.
+### 🧠 [ThinkBoard](https://github.com/vidhisingh24/ThinkBoard)
+> **Full-stack notes app** built on the MERN stack.
 
 **✨ Features**
-- PDF & YouTube transcript ingestion
-- Auto-generated notes, flashcards & MCQs
-- Chat with your notes (RAG over vector DB)
-- Spaced-repetition revision scheduler
+- Create, edit & delete notes
+- RESTful API with Express
+- Persistent storage on MongoDB Atlas
+- Responsive Tailwind UI
 
 **🛠 Stack**
-`Next.js` `Node.js` `Python` `LangChain` `Pinecone` `OpenAI` `MongoDB`
+`React` `Vite` `Tailwind` `Node.js` `Express` `MongoDB`
 
-<a href="https://github.com/vidhisingh24">
+<a href="https://github.com/vidhisingh24/ThinkBoard">
   <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=flat-square&logo=github&logoColor=white"/>
+</a>
+<a href="https://thinkboard-v29z.onrender.com/">
+  <img src="https://img.shields.io/badge/Live_Demo-2ea043?style=flat-square&logo=render&logoColor=white"/>
 </a>
 
 </td>
