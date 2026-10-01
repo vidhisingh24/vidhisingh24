@@ -44,7 +44,68 @@ jobs:
           # You can add more games here, comma-separated: pacman,breakout
           games: "pacman"
 
-      # 2. Publish the generated SVGs to the `output` branch
+      # 2. Build the contribution activity graph (self-hosted, replaces the paused
+      #    github-readme-activity-graph.vercel.app service)
+      - name: Generate contribution activity graph
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          script: |
+            function renderGraph(name, days) {
+              const W = 1200, H = 420, L = 80, R = 40, T = 90, B = 70;
+              const pw = W - L - R, ph = H - T - B;
+              const counts = days.map(d => d.contributionCount);
+              const total = counts.reduce((a, b) => a + b, 0);
+              const step = Math.max(1, Math.ceil(Math.max(...counts, 4) / 4));
+              const yMax = step * 4;
+              const x = i => L + (i * pw) / Math.max(1, days.length - 1);
+              const y = c => T + ph * (1 - c / yMax);
+              const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+              const pts = days.map((d, i) => [x(i), y(d.contributionCount)]);
+              const line = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+              const area = line + ` L${x(days.length - 1).toFixed(1)} ${T + ph} L${L} ${T + ph} Z`;
+              let grid = '';
+              for (let k = 0; k <= 4; k++) {
+                const v = step * k, gy = y(v).toFixed(1);
+                grid += `<line x1="${L}" y1="${gy}" x2="${W - R}" y2="${gy}" stroke="#2a2e45" stroke-width="1"/>`;
+                grid += `<text x="${L - 12}" y="${gy}" class="t" text-anchor="end" dominant-baseline="middle">${v}</text>`;
+              }
+              const xl = days.map((d, i) => `<text x="${x(i).toFixed(1)}" y="${T + ph + 22}" class="t" text-anchor="middle">${+d.date.slice(8)}</text>`).join('');
+              const dots = pts.map((p, i) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4" fill="#38bdae"><title>${days[i].date}: ${days[i].contributionCount}</title></circle>`).join('');
+              return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+            <style>.t{font:12px 'Segoe UI',Ubuntu,sans-serif;fill:#a9b1d6}.h{font:600 22px 'Segoe UI',Ubuntu,sans-serif;fill:#70a5fd}.s{font:13px 'Segoe UI',Ubuntu,sans-serif;fill:#a9b1d6}.a{font:600 13px 'Segoe UI',Ubuntu,sans-serif;fill:#a9b1d6}</style>
+            <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bf91f3" stop-opacity=".45"/><stop offset="1" stop-color="#bf91f3" stop-opacity="0"/></linearGradient></defs>
+            <rect width="${W}" height="${H}" rx="6" fill="#1a1b27"/>
+            <text x="${W / 2}" y="40" class="h" text-anchor="middle">${esc(name)}'s Contribution Graph</text>
+            <text x="${W / 2}" y="64" class="s" text-anchor="middle">Last ${days.length} days · ${total} contributions · ${days[0].date} → ${days[days.length - 1].date}</text>
+            ${grid}
+            <path d="${area}" fill="url(#g)"/>
+            <path d="${line}" fill="none" stroke="#bf91f3" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            ${dots}${xl}
+            <text x="${L + pw / 2}" y="${H - 14}" class="a" text-anchor="middle">Days</text>
+            <text x="22" y="${T + ph / 2}" class="a" text-anchor="middle" transform="rotate(-90 22 ${T + ph / 2})">Contributions</text>
+            </svg>`;
+            }
+            const fs = require('fs');
+            const login = context.repo.owner;
+            const to = new Date();
+            const from = new Date(to.getTime() - 31 * 864e5);
+            const q = `query($login: String!, $from: DateTime!, $to: DateTime!) {
+              user(login: $login) {
+                name
+                login
+                contributionsCollection(from: $from, to: $to) {
+                  contributionCalendar { weeks { contributionDays { date contributionCount } } }
+                }
+              }
+            }`;
+            const { user } = await github.graphql(q, { login, from: from.toISOString(), to: to.toISOString() });
+            const days = user.contributionsCollection.contributionCalendar.weeks.flatMap(w => w.contributionDays).slice(-31);
+            fs.mkdirSync('dist', { recursive: true });
+            fs.writeFileSync('dist/activity-graph.svg', renderGraph(user.name || user.login, days));
+            core.info(`Wrote dist/activity-graph.svg (${days.length} days)`);
+
+      # 3. Publish the generated SVGs to the `output` branch
       - name: Push SVGs to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
