@@ -120,30 +120,6 @@ const vidhi = {
 </td>
     <td width="50%" valign="top">
 
-### 🌾 [KisanLink AI](https://github.com/vidhisingh24/KisanLink-AI-IBM)
-> **Gujarat Hackathon 2026** — AI market linkage for cotton & groundnut farmers.
-
-**✨ Features**
-- 4-agent workflow: mandi prices, buyer matching, sell-vs-store
-- Ranks buyers by net realization after freight cost
-- Sell now / store / 70-30 split scenario analysis
-- IBM Granite assistant in English & Gujarati
-
-**🛠 Stack**
-`React` `Vite` `Tailwind` `Node.js` `Express` `IBM Granite` `watsonx.ai`
-
-<a href="https://github.com/vidhisingh24/KisanLink-AI-IBM">
-  <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=flat-square&logo=github&logoColor=white"/>
-</a>
-<a href="https://kisan-link-ai-ibm.vercel.app">
-  <img src="https://img.shields.io/badge/Live_Demo-2ea043?style=flat-square&logo=vercel&logoColor=white"/>
-</a>
-
-</td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-
 ### 🥗 [ZeroWaste Link](https://github.com/vidhisingh24/ZeroWaste_Link)
 > **Food rescue platform** connecting restaurants, NGOs & volunteers in real time.
 
@@ -161,6 +137,8 @@ const vidhi = {
 </a>
 
 </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
 
 ### 💸 [PaySlip](https://github.com/vidhisingh24/PaySlip)
@@ -176,27 +154,6 @@ const vidhi = {
 `React` `TypeScript` `Vite` `Node.js` `Express` `MongoDB` `Redis` `Jest` `Playwright`
 
 <a href="https://github.com/vidhisingh24/PaySlip">
-  <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=flat-square&logo=github&logoColor=white"/>
-</a>
-
-</td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-
-### 🌸 [BloomCraft](https://github.com/vidhisingh24/BloomCraft)
-> **Storefront for a handmade crochet brand** from Vadodara.
-
-**✨ Features**
-- Mobile-first catalog, cart & custom-order requests
-- 4-step checkout: local, college or pan-India delivery
-- UPI QR / deep-link payments + PDF receipts
-- Maker dashboard with order tracking & CSV export
-
-**🛠 Stack**
-`React` `TypeScript` `Vite` `Tailwind` `Vitest`
-
-<a href="https://github.com/vidhisingh24/BloomCraft">
   <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=flat-square&logo=github&logoColor=white"/>
 </a>
 
